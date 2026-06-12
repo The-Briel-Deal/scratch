@@ -1,0 +1,30 @@
+#version 450
+
+#define ELEMENT_COUNT 8
+
+layout(local_size_x = 64, local_size_y = 1, local_size_z = 1) in;
+
+layout(set = 0, binding = 0) readonly buffer ABuffer
+{
+    int values[];
+} a_buffer;
+
+layout(set = 0, binding = 1) readonly buffer BBuffer
+{
+    int values[];
+} b_buffer;
+
+layout(set = 1, binding = 0) buffer OutBuffer
+{
+    int values[];
+} out_buffer;
+
+void main()
+{
+    uint index = gl_GlobalInvocationID.x;
+    if (index >= ELEMENT_COUNT) {
+        return;
+    }
+
+    out_buffer.values[index] = a_buffer.values[index] + b_buffer.values[index];
+}
