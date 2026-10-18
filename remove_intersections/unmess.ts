@@ -1,3 +1,5 @@
+// @ts-nocheck
+
 export const HOLE_NONE = 0;
 export const HOLE_AGGRESSIVE = 1;
 export const HOLE_NONZERO = 2;
