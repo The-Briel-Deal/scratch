@@ -1,6 +1,6 @@
 import fs from "node:fs";
 
-import * as um from "./unmess.js"
+import * as um from "./unmess.ts"
 
 function main() {
   let poly : um.Pt[] = [];
