@@ -5,7 +5,7 @@ export const HOLE_AGGRESSIVE = 1;
 export const HOLE_NONZERO = 2;
 export const HOLE_EVENODD = 3;
 
-type Pt = [number, number];
+export type Pt = [number, number];
 type Vtx = {
   xy: Pt;
   isects: Isect[];
