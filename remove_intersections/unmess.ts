@@ -243,6 +243,7 @@ export function unmess(poly: Pt[], args: Record<any, any> = {}) {
   }
 
   let verts: Vtx[] = build_vertices(poly);
+  console.log(JSON.stringify(verts, null, 2));
   let isect_mir: Record<string, [number, number]> = mirror_isects(verts);
 
   let n = poly.length;

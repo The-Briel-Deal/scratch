@@ -1,12 +1,34 @@
-import fs from "node:fs";
 
 import * as um from "./unmess.ts"
 
 function main() {
   let poly : um.Pt[] = [];
-  let json_str: string = fs.readFileSync('./test_stroke_moth.json', {encoding: "utf-8"});
-  let j = JSON.parse(json_str);
-  let input: {x: number, y: number}[] = j["input"];
+  let input: {x: number, y: number}[] = [
+    {
+      "x": 0.5,
+      "y": 0.25
+    },
+    {
+      "x": 0.35,
+      "y": -0.25
+    },
+    {
+      "x": 0.1,
+      "y": 0.5
+    },
+    {
+      "x": -0.1,
+      "y": 0.5
+    },
+    {
+      "x": -0.35,
+      "y": -0.25
+    },
+    {
+      "x": -0.5,
+      "y": 0.25
+    }
+  ];
   for (const point of input){
     poly.push([point.x, point.y]);
   }
